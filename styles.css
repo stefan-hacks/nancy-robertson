@@ -471,22 +471,7 @@ ul {
     align-items: center;
 }
 
-.about-image {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Single Image Frame - Clean and Simple */
-.about-image-frame {
-    position: relative;
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto;
-}
-
-/* About Image - Simple clean layout */
+/* About Image - Simple clean layout, left-aligned */
 .about-image {
     display: flex;
     justify-content: flex-start;
@@ -512,7 +497,7 @@ ul {
     margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem;}
 }
 
 .credential-item {
