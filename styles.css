@@ -356,6 +356,52 @@ ul {
     transform: scale(1.03);
 }
 
+/* About Image Collage */
+.about-image-collage {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+}
+
+.image-frame-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    z-index: 2;
+}
+
+.image-frame-secondary {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 45%;
+    z-index: 3;
+    transform: rotate(5deg);
+    transition: var(--transition);
+}
+
+.image-frame-secondary:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 4;
+}
+
+.image-frame-tertiary {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 40%;
+    z-index: 1;
+    transform: rotate(-3deg);
+    transition: var(--transition);
+}
+
+.image-frame-tertiary:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 4;
+}
+
 .about-content {
     padding-left: 2rem;
 }
