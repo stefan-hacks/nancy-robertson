@@ -324,33 +324,36 @@ ul {
     position: relative;
 }
 
-.image-placeholder {
+.image-frame {
     width: 100%;
-    aspect-ratio: 3/4;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    max-width: 380px;
+    aspect-ratio: 1;
     border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
     overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(107, 91, 149, 0.25);
+    position: relative;
 }
 
-.image-placeholder::before {
+.image-frame::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    inset: 0;
+    border: 3px solid var(--color-accent);
+    border-radius: 20px;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.initials {
-    font-family: var(--font-heading);
-    font-size: 8rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.3);
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: var(--transition);
+}
+
+.image-frame:hover .profile-photo {
+    transform: scale(1.03);
 }
 
 .about-content {
