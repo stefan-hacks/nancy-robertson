@@ -307,35 +307,34 @@ ul {
     aspect-ratio: 4/5;
 }
 
-/* About Image - Single */
+/* About Image - Single Image Layout */
+.about-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .about-image-frame {
     position: relative;
     width: 100%;
-    max-width: 400px;
-}
-
-.about-image-frame::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: -20px;
-    bottom: -20px;
-    border: 2px solid var(--color-primary);
-    border-radius: 20px;
-    z-index: 0;
+    max-width: 380px;
 }
 
 .about-photo {
-    position: relative;
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 20px;
     box-shadow: var(--shadow-lg);
-    z-index: 1;
     object-fit: cover;
     aspect-ratio: 4/5;
-    transition: var(--transition);
+    transition: transform 0.3s ease;
+}
+
+.about-photo:hover {
+    transform: scale(1.02);
+}    transition: var(--transition);
 }
 
 .about-photo:hover {
