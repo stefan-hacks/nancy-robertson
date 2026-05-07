@@ -266,7 +266,21 @@
                 </div>
 
                 <div class="contact-form-container">
-                    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <!-- 
+                        IMPORTANT: To make this form work, you need to:
+                        Option 1 (Recommended): Sign up at https://formspree.io/register
+                        - Register with info@nancyflorence.com
+                        - Get your unique form endpoint (e.g., https://formspree.io/f/XYZ123)
+                        - Replace the action URL below with your endpoint
+                        
+                        Option 2: Use Netlify Forms (if hosting on Netlify)
+                        - Add data-netlify="true" to the form tag
+                        
+                        Option 3: Current setup uses mailto fallback (opens email client)
+                    -->
+                    <form class="contact-form" action="mailto:info@nancyflorence.com" method="POST" enctype="text/plain">
+                        <input type="hidden" name="subject" value="New Enquiry from Nancy Robertson Therapy Website">
+                        <input type="hidden" name="To" value="info@nancyflorence.com">
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" required>
