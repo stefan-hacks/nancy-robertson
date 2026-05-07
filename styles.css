@@ -290,6 +290,58 @@ ul {
     display: block;
 }
 
+/* Hero Single Image */
+.hero-image-single {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.hero-image-single img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+    aspect-ratio: 4/5;
+}
+
+/* About Image - Single */
+.about-image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.about-image-frame::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px solid var(--color-primary);
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.about-photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    z-index: 1;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    transition: var(--transition);
+}
+
+.about-photo:hover {
+    transform: scale(1.02);
+}
+
 .hero-tagline {
     font-size: 0.8125rem;
     font-weight: 600;
