@@ -619,6 +619,43 @@ ul {
     color: var(--color-primary);
 }
 
+/* Clickable contact items (Phone/WhatsApp) */
+.contact-clickable {
+    padding: 0;
+    background: var(--color-surface);
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    transition: var(--transition);
+}
+
+.contact-clickable:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    width: 100%;
+}
+
+.contact-link:hover {
+    color: inherit;
+}
+
+.whatsapp-icon {
+    background: #25D366 !important;
+    color: white !important;
+}
+
+.whatsapp-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
 .professional-links {
     margin-top: 2.5rem;
 }
