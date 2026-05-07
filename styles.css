@@ -960,184 +960,169 @@ ul {
     line-height: 1.6;
 }
 
-/* Contact Section */
+/* Contact Section - Redesigned */
 .contact {
     padding: var(--section-padding) 0;
-    background: var(--color-background);
+    background: linear-gradient(180deg, var(--color-background) 0%, var(--color-surface) 100%);
 }
 
-.contact-grid {
+.contact-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-}
-
-.contact-text {
-    font-size: 1.0625rem;
-    color: var(--color-text-light);
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.contact-icon {
-    font-size: 1.5rem;
-}
-
-.contact-item h4 {
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
-    margin-bottom: 0.25rem;
-}
-
-.contact-item a,
-.contact-item p {
-    font-size: 1rem;
-    color: var(--color-text);
-    transition: var(--transition);
-}
-
-.contact-item a:hover {
-    color: var(--color-primary);
-}
-
-/* Clickable contact items (Phone/WhatsApp) */
-.contact-clickable {
-    padding: 0;
-    background: var(--color-surface);
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
-    transition: var(--transition);
-}
-
-.contact-clickable:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-2px);
-}
-
-.contact-link {
+.contact-card {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.25rem;
-    width: 100%;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    transition: var(--transition);
+    text-decoration: none;
+    position: relative;
 }
 
-.contact-link:hover {
-    color: inherit;
+.contact-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
 }
 
-.whatsapp-icon {
-    background: #25D366 !important;
-    color: white !important;
+.contact-card.non-clickable {
+    cursor: default;
 }
 
-.whatsapp-icon svg {
+.contact-card.non-clickable:hover {
+    border-color: var(--color-border);
+    transform: none;
+    box-shadow: none;
+}
+
+.contact-card-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--color-surface);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
+.contact-card:hover .contact-card-icon {
+    background: var(--color-primary);
+    color: white;
+}
+
+.contact-card-icon svg {
     width: 24px;
     height: 24px;
 }
 
-.professional-links {
-    margin-top: 2.5rem;
+.contact-card-icon.whatsapp {
+    color: #25D366;
 }
 
-.profile-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 1.5rem;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    font-size: 0.9375rem;
+.contact-card:hover .contact-card-icon.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.contact-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+.contact-value {
+    font-size: 1rem;
     font-weight: 500;
     color: var(--color-text);
+}
+
+.contact-arrow {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    opacity: 0;
+    transform: translateX(-10px);
     transition: var(--transition);
 }
 
-.profile-link:hover {
-    border-color: var(--color-primary);
+.contact-card:hover .contact-arrow {
+    opacity: 1;
+    transform: translateX(0);
     color: var(--color-primary);
 }
 
-.profile-link svg {
-    width: 16px;
-    height: 16px;
+.contact-cta {
+    text-align: center;
+    margin-top: 3rem;
 }
 
-/* Contact Form */
-.contact-form-container {
-    background: var(--color-surface);
-    padding: 2.5rem;
-    border-radius: 16px;
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-sm);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.875rem 1rem;
+.contact-note {
     font-size: 0.9375rem;
-    font-family: var(--font-body);
-    color: var(--color-text);
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(107, 91, 149, 0.1);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 0.875rem;
     color: var(--color-text-light);
-    cursor: pointer;
+    font-style: italic;
 }
 
-.checkbox-label input[type="checkbox"] {
-    width: auto;
-    margin-top: 2px;
+@media (max-width: 640px) {
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* About Image - Fixed */
+.about-image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.about-image-frame::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-primary);
+    border-radius: 20px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    z-index: 1;
+    object-fit: cover;
+    aspect-ratio: 4/5;
+    transition: var(--transition);
+    display: block;
+}
+
+.about-photo:hover {
+    transform: scale(1.02);
 }
 
 /* Footer */
